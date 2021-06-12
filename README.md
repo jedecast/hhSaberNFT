@@ -11,16 +11,16 @@
  - [Request & Receive data](https://docs.chain.link/docs/request-and-receive-data)
  - [Chainlink Price Feeds](https://docs.chain.link/docs/using-chainlink-reference-contracts)
  - [Chainlink VRF](https://docs.chain.link/docs/chainlink-vrf)
- 
+
  ## Requirements
 
 - [NPM](https://www.npmjs.com/) or [YARN](https://yarnpkg.com/)
 
 ## Installation
 
-Set your `KOVAN_RPC_URL` [environment variable.](https://www.twilio.com/blog/2017/01/how-to-set-environment-variables.html). You can get one for free at [Infura's site.](https://infura.io/). You'll also need to set the variable `PRIVATE_KEY` which is your private key from you wallet, ie metamask. 
+Set your `KOVAN_RPC_URL` [environment variable.](https://www.twilio.com/blog/2017/01/how-to-set-environment-variables.html). You can get one for free at [Infura's site.](https://infura.io/). You'll also need to set the variable `PRIVATE_KEY` which is your private key from you wallet, ie metamask.
 
-You can set this in your `.env` file if you're unfamiliar with how setting environment variables work. 
+You can set this in your `.env` file if you're unfamiliar with how setting environment variables work.
 
 `.env` example:
 ```
@@ -35,9 +35,9 @@ export MNEMONIC='cat dog frog...'
 export MAINNET_RPC_URL="https://eth-mainnet.alchemyapi.io/v2/your-api-key"
 ```
 
-If you plan on deploying to a local [Hardhat network](https://hardhat.org/hardhat-network/) that's a fork of the Ethereum mainnet instead of a public test network like Kovan, you'll also need to set your `MAINNET_RPC_URL` [environment variable.](https://www.twilio.com/blog/2017/01/how-to-set-environment-variables.html) and uncomment the `forking` section in `hardhat.config.js`. You can get one for free at [Alchemy's site.](https://alchemyapi.io/). 
+If you plan on deploying to a local [Hardhat network](https://hardhat.org/hardhat-network/) that's a fork of the Ethereum mainnet instead of a public test network like Kovan, you'll also need to set your `MAINNET_RPC_URL` [environment variable.](https://www.twilio.com/blog/2017/01/how-to-set-environment-variables.html) and uncomment the `forking` section in `hardhat.config.js`. You can get one for free at [Alchemy's site.](https://alchemyapi.io/).
 
-You can also use a `PRIVATE_KEY` instead of a `MNEMONIC` environment variable by uncommenting the section in the `hardhat.config.js`, and commenting out the `MNEMONIC` line. 
+You can also use a `PRIVATE_KEY` instead of a `MNEMONIC` environment variable by uncommenting the section in the `hardhat.config.js`, and commenting out the `MNEMONIC` line.
 
 Then you can install all the dependencies
 
@@ -64,7 +64,7 @@ Deployment scripts are in the [deploy](https://github.com/pappas999/chainlink-ha
 This will deploy to a local hardhat network
 
 ```bash
-npx hardhat deploy 
+npx hardhat deploy
 ```
 
 To deploy to testnet:
@@ -146,4 +146,11 @@ npx hardhat verify --network kovan 0x9279791897f112a41FfDa267ff7DbBC46b96c296 "0
 
 ```
 yarn lint:fix
+```
+
+## Opensea Testnets
+
+```
+opensea testnets only works with rinkeby right now.
+Use this link to list contract on opensea: https://testnets.opensea.io/get-listed/step-two
 ```

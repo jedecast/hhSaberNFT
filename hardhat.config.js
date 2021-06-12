@@ -10,21 +10,22 @@ require("./tasks/accounts")
 require("./tasks/balance")
 require("./tasks/fund-link")
 require("./tasks/block-number")
-require("./tasks/block-number")
-require("./tasks/random-number-consumer")
-require("./tasks/price-consumer")
-require("./tasks/api-consumer")
+require("./tasks/SaberNFT/create-hero")
+require("./tasks/SaberNFT/create-metadata")
+require("./tasks/SaberNFT/get-uri")
+// require("./tasks/name-of-directory") AS LONG AS THERE IS AN index.js file)
 
 
 require('dotenv').config()
 
-const MAINNET_RPC_URL = process.env.MAINNET_RPC_URL || process.env.ALCHEMY_MAINNET_RPC_URL || "https://eth-mainnet.alchemyapi.io/v2/your-api-key"
-const RINKEBY_RPC_URL = process.env.RINKEBY_RPC_URL || "https://eth-rinkeby.alchemyapi.io/v2/your-api-key"
-const KOVAN_RPC_URL = process.env.KOVAN_RPC_URL || "https://eth-kovan.alchemyapi.io/v2/your-api-key"
+const MAINNET_RPC_URL = process.env.MAINNET_RPC_URL || "infura mainnet endpoint url"
+const RINKEBY_RPC_URL = process.env.RINKEBY_RPC_URL || "infura rinkeby endpoint url"
+const KOVAN_RPC_URL = process.env.KOVAN_RPC_URL || "infura kovan endpoint url"
 const MNEMONIC = process.env.MNEMONIC || "your mnemonic"
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "Your etherscan API key"
 // optional
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "your private key"
+
 
 module.exports = {
     defaultNetwork: "hardhat",
@@ -39,25 +40,19 @@ module.exports = {
         },
         kovan: {
             url: KOVAN_RPC_URL,
-            // accounts: [PRIVATE_KEY],
-            accounts: {
-                mnemonic: MNEMONIC,
-            },
+            accounts: [PRIVATE_KEY],
+            //accounts: { mnemonic: MNEMONIC,},
             saveDeployments: true,
         },
         rinkeby: {
             url: RINKEBY_RPC_URL,
-            // accounts: [PRIVATE_KEY],
-            accounts: {
-                mnemonic: MNEMONIC,
-            },
+            accounts: [PRIVATE_KEY],
+            //accounts: { mnemonic: MNEMONIC, },
             saveDeployments: true,
         },
         ganache: {
             url: 'http://localhost:8545',
-            accounts: {
-                mnemonic: MNEMONIC,
-            }
+            accounts: { mnemonic: MNEMONIC,}
         }
     },
     etherscan: {
